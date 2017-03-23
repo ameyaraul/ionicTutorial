@@ -19,6 +19,13 @@
     Follow along on the tutorial section of the Ionic docs!
   </p>
   <p>
+    <ion-list>
+      <ion-item *ngFor="let dest of destinations">
+        {{dest.place}}
+      </ion-item>
+    </ion-list>
+  </p>
+  <p>
     <ion-item>
         <ion-label>Start Date</ion-label>
         <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="startDate"></ion-datetime>
