@@ -19,6 +19,31 @@
     Follow along on the tutorial section of the Ionic docs!
   </p>
   <p>
+    <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="startDate"></ion-datetime>
+    </ion-item>
+  </p>
+  <p>
+    <ion-item>
+        <ion-label>End Date</ion-label>
+        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="endDate"></ion-datetime>
+    </ion-item>
+  </p>
+  <p>
+  <ion-list>
+    <ion-list-header>
+      Budget      
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="100" max="1000" pin="true"[(ngModel)]="brightness">
+         <ion-label range-left>100</ion-label>
+        <ion-label range-right>1000</ion-label> 
+      </ion-range>
+    </ion-item>
+  </ion-list>
+  </p>
+  <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
