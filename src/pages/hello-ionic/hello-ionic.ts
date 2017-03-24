@@ -14,7 +14,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class HelloIonicPage {
 	
-    private getTripURL = "http://localhost:8000/tourdetails/gettrip"; 
+    private getTripURL = "http://localhost:8000/tourdetails/gettripjson"; 
 	data={};
 	destinations ='';
 	public destination: any;
