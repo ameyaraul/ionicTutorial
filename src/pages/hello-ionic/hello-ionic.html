@@ -41,13 +41,13 @@
   <p>
     <ion-item>
         <ion-label>Start Date</ion-label>
-        <ion-datetime name ="startDate" displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="startDate"></ion-datetime>
+        <ion-datetime name ="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
     </ion-item>
   </p>
   <p>
     <ion-item>
         <ion-label>End Date</ion-label>
-        <ion-datetime name ="endDate" displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="endDate"></ion-datetime>
+        <ion-datetime name ="endDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
     </ion-item>
   </p>
   <p>
@@ -56,9 +56,9 @@
       Budget      
     </ion-list-header>
     <ion-item>
-      <ion-range name ="budget" min="100" max="1000" pin="true"[(ngModel)]="budget">
+      <ion-range name ="budget" min="100" max="10000" pin="true"[(ngModel)]="budget">
          <ion-label range-left>100</ion-label>
-        <ion-label range-right>1000</ion-label> 
+        <ion-label range-right>10000</ion-label> 
       </ion-range>
     </ion-item>
   </ion-list>
