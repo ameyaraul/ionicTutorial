@@ -31,7 +31,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Let\'s PlanIt!', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Surprise Me', component: ListPage }
     ];
   }
 
