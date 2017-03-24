@@ -11,14 +11,14 @@
 
 
 <ion-content padding>
-
+ <form (ngSubmit)="logForm()">
   <h3>Discover the best vacation for your needs and desires!</h3>
 
   <p>
     <ion-list>
       <ion-item>
         <ion-label>Select your city of departure</ion-label>
-        <ion-select [(ngModel)]="departure">
+        <ion-select  name ="departure" [(ngModel)]="departure">
         <ion-option  *ngFor="let dest of destinations">
           {{dest.place}}
         </ion-option>
@@ -30,7 +30,7 @@
     <ion-list>
       <ion-item>
         <ion-label>Select the places you want to visit</ion-label>
-        <ion-select [(ngModel)]="destination" multiple="true" cancelText="Nah" okText="Okay!" >
+        <ion-select [(ngModel)]="destination" name ="destination" multiple="true" cancelText="Nah" okText="Okay!" >
         <ion-option  *ngFor="let dest of destinations">
           {{dest.place}}
         </ion-option>
@@ -41,13 +41,13 @@
   <p>
     <ion-item>
         <ion-label>Start Date</ion-label>
-        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="startDate"></ion-datetime>
+        <ion-datetime name ="startDate" displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="startDate"></ion-datetime>
     </ion-item>
   </p>
   <p>
     <ion-item>
         <ion-label>End Date</ion-label>
-        <ion-datetime displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="endDate"></ion-datetime>
+        <ion-datetime name ="endDate" displayFormat="MM/YYYY" pickerFormat="MMMM YYYY" [(ngModel)]="endDate"></ion-datetime>
     </ion-item>
   </p>
   <p>
@@ -56,7 +56,7 @@
       Budget      
     </ion-list-header>
     <ion-item>
-      <ion-range min="100" max="1000" pin="true"[(ngModel)]="brightness">
+      <ion-range name ="budget" min="100" max="1000" pin="true"[(ngModel)]="budget">
          <ion-label range-left>100</ion-label>
         <ion-label range-right>1000</ion-label> 
       </ion-range>
@@ -66,5 +66,6 @@
   <p>
     <button ion-button color="secondary" menuToggle>Toggle Menu</button>
   </p>
-
+  <p> <button name ="submit" ion-button type="submit" (click)="submit()">Submit</button></p>
+   </form>
 </ion-content>
