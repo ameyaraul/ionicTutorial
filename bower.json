@@ -1,0 +1,20 @@
+{
+  "name": "ionic-hello-world",
+  "description": "MyIonicPlanIt: An Ionic project",
+  "main": "",
+  "authors": [
+    "Ionic Framework"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ameyaraul/ionicTutorial",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ion-autocomplete": "^0.4.0"
+  }
+}
