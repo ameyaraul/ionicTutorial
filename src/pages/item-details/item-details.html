@@ -1,18 +1,66 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
+    <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>{{selectedCity.name}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
-  </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </h4>
+  <div *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
+    <ion-card *ngIf="city.name == selectedCity.name">
+
+      <ion-card-header>
+        Day {{city.day}} : {{city.s_month|number:'1.0-0'}}/{{city.s_day|number:'1.0-0'}}
+      </ion-card-header>
+
+      <ion-list>
+
+        <button ion-item *ngIf="city.arrived == 'yes'">
+          <ion-icon name="plane" item-left></ion-icon>
+            <ion-row>
+              <ion-col col-4>Arriving in {{city.name}}</ion-col>
+              <ion-col col-4 *ngIf="!city.s_minute">{{city.s_hour|number:'2.0-0'}}:00</ion-col>
+              <ion-col col-4 *ngIf="city.s_minute">{{city.s_hour|number:'2.0-0'}}:{{city.s_minute|number:'2.0-0'}}</ion-col>
+              <ion-col col-4>Flight {{inFlights[selectedCityName]}}</ion-col>
+            </ion-row>
+        </button>
+
+
+        <button ion-item >
+          <ion-icon name="home" item-left></ion-icon>
+            <ion-row>
+              <ion-col col-12>Lodging at {{itinerary.hotels[selectedCityName]}}</ion-col>
+            </ion-row>
+        </button>
+
+        <div *ngFor="let att of itinerary.attraction_itinerary[i].attractions">
+
+          <button ion-item>
+            <ion-icon name="pin" item-left></ion-icon>
+              <ion-row>
+                <ion-col col-4>{{att.name}}</ion-col>
+                <ion-col col-1 *ngIf="!att.s_minute">{{att.s_hour|number:'2.0-0'}}:00</ion-col>
+                <ion-col col-1 *ngIf="att.s_minute">{{att.s_hour|number:'2.0-0'}}:{{att.s_minute|number:'2.0-0'}}</ion-col>
+                <ion-col col-1>-</ion-col>
+                <ion-col col-1 *ngIf="!att.e_minute">{{att.e_hour|number:'2.0-0'}}:00</ion-col>
+                <ion-col col-1 *ngIf="att.e_minute">{{att.e_hour|number:'2.0-0'}}:{{att.e_minute|number:'2.0-0'}}</ion-col>
+              </ion-row>
+          </button>
+        </div>
+
+        <button ion-item *ngIf="city.departed == 'yes'">
+          <ion-icon name="plane" item-left></ion-icon>
+            <ion-row>
+              <ion-col col-4>Departing from {{city.name}}</ion-col>
+              <ion-col col-4 *ngIf="!city.e_minute">{{city.e_hour|number:'2.0-0'}}:00</ion-col>
+              <ion-col col-4 *ngIf="city.e_minute">{{city.e_hour|number:'2.0-0'}}:{{city.e_minute|number:'2.0-0'}}</ion-col>
+              <ion-col col-4>Flight {{outFlights[selectedCityName]}}</ion-col>
+            </ion-row>
+        </button>
+
+      </ion-list>
+    </ion-card>
+  </div>
 </ion-content>

@@ -8,10 +8,22 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
-  selectedItem: any;
+  selectedCity: any;
+  selectedCityName: string;
+  itinerary: any;
+  myIndex: any;
+  inFlights: any;
+  outFlights: any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedCity = navParams.get('city');
+    var selectedCityName = this.selectedCity.name;
+    this.selectedCityName = selectedCityName;
+    this.itinerary = navParams.get('itinerary');
+    this.inFlights = this.itinerary.in_flights;
+    this.outFlights = this.itinerary.out_flights;
+    this.myIndex = navParams.get('index');
   }
 }
