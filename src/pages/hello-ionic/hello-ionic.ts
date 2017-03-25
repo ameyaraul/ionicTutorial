@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Injectable }     from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+import { ResultsPage } from '../../pages/results/results';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -23,7 +26,7 @@ export class HelloIonicPage {
     
     public startDate: Date;
 	public endDate: Date;
-  constructor(public http: Http) {  	
+  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {  	
   		this.http.get('http://localhost:8000/tourdetails/destinations').map(res => res.json()).subscribe(data => {
         this.destinations = data;
         console.log(this.destinations);
@@ -48,6 +51,10 @@ export class HelloIonicPage {
         ).subscribe(
             (res) => {
                 //this.postResponse = res;
+                this.navCtrl.push(ResultsPage, 
+                {
+                    itinerary: res
+                });
                 console.log("VALUE RECEIVED: ",res);
             },
             (x) => {
