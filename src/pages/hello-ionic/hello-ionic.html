@@ -12,6 +12,7 @@
 
 <ion-content padding>
 
+ <div *ngIf="showLoading" class="loader"></div>
  <form (ngSubmit)="submit()">
   <h3>Discover the best vacation for your needs and desires!</h3>
 

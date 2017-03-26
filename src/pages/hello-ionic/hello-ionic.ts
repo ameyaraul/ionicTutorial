@@ -26,7 +26,9 @@ export class HelloIonicPage {
     
     public startDate: Date;
 	public endDate: Date;
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {  	
+    public showLoading: boolean; 
+  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {  
+        this.showLoading = false;
   		this.http.get('http://localhost:8000/tourdetails/destinations').map(res => res.json()).subscribe(data => {
         this.destinations = data;
         console.log(this.destinations);
@@ -34,6 +36,7 @@ export class HelloIonicPage {
 
   }
   submit() {
+        this.showLoading = true;
   		var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         this.http.post(
@@ -55,6 +58,7 @@ export class HelloIonicPage {
                 {
                     itinerary: res
                 });
+                this.showLoading = false;
                 console.log("VALUE RECEIVED: ",res);
             },
             (x) => {
