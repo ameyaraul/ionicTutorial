@@ -2,7 +2,7 @@ item-details {
 	.segment-md .segment-button{
 		width:130px;
 	}
-
+	$segment-button-ios-background-color:"red";
 	.image {
     	display: inline-block;
   		width: 50px;
@@ -12,4 +12,22 @@ item-details {
   		background-position: center center;
   		background-size: cover;
   		}
+  	.item.wrap, .item-content.wrap  .wrap{
+		white-space: normal;
+	}	
+	.small {
+		font-size:10px;
+		position: relative;
+		top: 10px;
+		
+	}
+	.depflight {
+			position: relative;
+			font-size:10px;
+			top: 20px;
+			left:-20px;	
+	}
+	.medium {
+		font-size:15px;
+	}
 }

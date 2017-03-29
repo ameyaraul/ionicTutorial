@@ -1,3 +1,4 @@
+
 results {
 	ion-thumbnail{
 		background: url('../assets/img/Landing_Background.jpg') center;
@@ -8,17 +9,26 @@ results {
 		padding-top: 15px;
 	}
 
-	h1, h2{
+	h1, h2, h3{
 		display: inline;
 	}
+	h3 {
+		 line-height:20px;
+	}
+	$label: #000066 !default;
 
-	.image {
-    display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;}
+	ion-list{
+		
+		background-color:black;
+		//background: url("../assets/img/Logo2.png");
+		//background: url('../assets/img/attractions/CentralPark.jpg') center;
+		
+
+	}
+	div.cities{
+		opacity :0.1;		
+		color: white;
+	}
+
 
 }

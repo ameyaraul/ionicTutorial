@@ -12,22 +12,19 @@
 <ion-content>
   <ion-card>
   	<ion-card-header>
-        <h1>We have generated a vacation itinerary for you that will cost </h1>
-        <h2>${{ itinerary.total_expenses|number:"1.0-0" }} </h2>
-        <h1>and last from </h1>
-        <h2>{{itinerary.city_itinerary[0].s_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].s_day|number:'2.0-0'}} </h2>
-        <h1>to </h1>
-        <h2>{{itinerary.city_itinerary[0].e_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].e_day|number:'1.0-0'}}</h2>
-        <h1>.</h1>
+        <h3>We have generated a vacation itinerary for you that will cost </h3>
+        <h3>${{ itinerary.total_expenses|number:"1.0-0" }} </h3><h3>and last from </h3>
+        <h3>{{itinerary.city_itinerary[0].s_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].s_day|number:'2.0-0'}} </h3>
+        <h3>to </h3>
+        <h3>{{itinerary.city_itinerary[0].e_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].e_day|number:'1.0-0'}}</h3>
+        <h3>.</h3>
      </ion-card-header>
   </ion-card>
   <ion-card>
 	  <ion-list>
-	  	<div *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
+	  	<div class ="cities" *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
 		   	<button *ngIf="city.arrived == 'yes'" ion-item   (click)="itemTapped($event, city, i)">
-		      <div item-left>
-          <img class="image" src="https://s-media-cache-ak0.pinimg.com/originals/5d/48/a9/5d48a945daf9e2a941a830098f1fe284.jpg"/>
-          </div>
+
 		      {{city.name}} : {{city.s_month|number:'1.0-0'}}/{{city.s_day|number:'1.0-0'}} to {{city.e_month|number:'1.0-0'}}/{{city.e_day|number:'1.0-0'}}
 		      <div class="item-note" item-right>
 		        {{city.name}}
