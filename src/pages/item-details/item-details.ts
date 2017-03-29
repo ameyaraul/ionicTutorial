@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
-  selector: 'page-item-details',
+  selector: 'item-details',
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
@@ -14,6 +15,8 @@ export class ItemDetailsPage {
   myIndex: any;
   inFlights: any;
   outFlights: any;
+
+  day: any;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -25,5 +28,7 @@ export class ItemDetailsPage {
     this.inFlights = this.itinerary.in_flights;
     this.outFlights = this.itinerary.out_flights;
     this.myIndex = navParams.get('index');
+
+    this.day = "1";
   }
 }
