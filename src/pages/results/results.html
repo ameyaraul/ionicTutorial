@@ -9,29 +9,48 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="cityList">
   <ion-card>
-  	<ion-card-header>
+    <img src="assets/img/results.jpg"/>
+     <div class="card-title">Pack your bags!</div>
+     <div class="card-subtitle">
+        <p>We planned it all out! Wanna see the details?</p>
+        <p>Trip Expenses: {{itinerary.total_expenses|number:"1.0-0"}}</p>
+        <p>Trip Duration: {{itinerary.city_itinerary[0].s_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].s_day|number:'2.0-0'}} to {{itinerary.city_itinerary[0].e_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].e_day|number:'1.0-0'}}</p>
+      </div>
+    <!--
+  	<ion-card-content>
         <h3>We have generated a vacation itinerary for you that will cost </h3>
         <h3>${{ itinerary.total_expenses|number:"1.0-0" }} </h3><h3>and last from </h3>
         <h3>{{itinerary.city_itinerary[0].s_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].s_day|number:'2.0-0'}} </h3>
         <h3>to </h3>
         <h3>{{itinerary.city_itinerary[0].e_month|number:'2.0-0'}}/{{itinerary.city_itinerary[0].e_day|number:'1.0-0'}}</h3>
         <h3>.</h3>
-     </ion-card-header>
+     </ion-card-content>
+     !-->
   </ion-card>
-  <ion-card>
-	  <ion-list>
-	  	<div class ="cities" *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
-		   	<button *ngIf="city.arrived == 'yes'" ion-item   (click)="itemTapped($event, city, i)">
 
+  <div>
+	  <div class ="cities" *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
+      <ion-card *ngIf="city.arrived == 'yes'" (click)="itemTapped($event, city, i)">
+        <!--
+		   	<button *ngIf="city.arrived == 'yes'" ion-item   (click)="itemTapped($event, city, i)">
+        !-->
+          <img src="assets/img/cities/{{city.name}}.jpg"/>
+          <div class="card-title">{{city.name}}</div>
+          <div class="card-subtitle">{{city.s_month|number:'1.0-0'}}/{{city.s_day|number:'1.0-0'}} to {{city.e_month|number:'1.0-0'}}/{{city.e_day|number:'1.0-0'}}</div>
+          <!--
 		      {{city.name}} : {{city.s_month|number:'1.0-0'}}/{{city.s_day|number:'1.0-0'}} to {{city.e_month|number:'1.0-0'}}/{{city.e_day|number:'1.0-0'}}
+
 		      <div class="item-note" item-right>
 		        {{city.name}}
 		      </div>
-
+          !-->
+        <!--
 		    </button>
-	   </div>
-	  </ion-list>
-  </ion-card>
+        !-->
+      </ion-card>
+   </div>
+  </div>
+  
 </ion-content>

@@ -5,29 +5,39 @@ results {
 		//height: 100px;
 	}
 
-	ion-list{
-		padding-top: 15px;
+	.cityList img{
+		height: 200px;
 	}
 
-	h1, h2, h3{
-		display: inline;
-	}
-	h3 {
-		 line-height:20px;
-	}
-	$label: #000066 !default;
+	.cityList {
 
-	ion-list{
-		
-		background-color:black;
-		//background: url("../assets/img/Logo2.png");
-		//background: url('../assets/img/attractions/CentralPark.jpg') center;
-		
+		ion-card {
+	    position: relative;
+	    text-align: center;
+	  }
 
-	}
-	div.cities{
-		opacity :0.1;		
-		color: white;
+	  .card-title {
+	    position: absolute;
+	    top: 36%;
+	    font-size: 2.0em;
+	    width: 100%;
+	    font-weight: bold;
+	    color: #fff;
+	  }
+
+	  .card-subtitle {
+	    font-size: 1.0em;
+	    position: absolute;
+	    top: 52%;
+	    width: 100%;
+	    color: #fff;
+	  }
+
+	  .card-subtitle p{
+	    font-size: 1.0em;
+	    width: 100%;
+	    color: #fff;
+	  }
 	}
 
 
