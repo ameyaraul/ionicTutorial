@@ -52,7 +52,8 @@ export class HelloIonicPage {
                     from_date:this.startDate, 
                     to_date:this.endDate,
                     budget:this.budget,
-                    profile:this.profileService.getProfile()                   
+                    profile:this.profileService.getProfile(),
+                    daysFree:this.daysFree               
                 }),
             {headers:headers}
         ).map(
