@@ -28,12 +28,12 @@ export class ProfilePage {
 
   updateProfile() {
     var newProfile = {
-      mustSee:this.mustSee,
-      art:this.art,
-      history:this.history,
-      museums:this.museums,
-      nature:this.nature,
-      entertainment:this.entertainment
+      MustSee:this.mustSee,
+      Art:this.art,
+      History:this.history,
+      Museums:this.museums,
+      Nature:this.nature,
+      Entertainment:this.entertainment
     }
     this.profileService.setProfile(newProfile);
   }

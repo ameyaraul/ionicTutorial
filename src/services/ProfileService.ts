@@ -5,12 +5,12 @@ export class ProfileService {
 
   constructor() {
   	this.profile = {
-  		mustSee:2,
-		art:3,
-		history:2,
-		museums:1,
-		nature:3,
-		entertainment:4
+  		MustSee:2,
+		Art:3,
+		History:2,
+		Museums:1,
+		Nature:3,
+		Entertainment:4
   	}
   }
 
