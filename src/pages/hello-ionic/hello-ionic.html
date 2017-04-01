@@ -21,7 +21,7 @@
           <ion-card-title><b>Discover the best vacation for your needs and desires!</b></ion-card-title>
         </div>
 
-        <br /><hr /><br />
+        <hr />
 
         <ion-item>
           <ion-label>Where are you from?</ion-label>
@@ -32,7 +32,7 @@
           </ion-select>
         </ion-item>
 
-        <br /><hr /><br />
+        <hr />
 
         <ion-item>
           <ion-label>Surprise Me!</ion-label>
@@ -47,7 +47,8 @@
             </ion-option>
           </ion-select>
         </ion-item>
-        <br /><hr /><br />
+
+        <hr />
 
         <ion-item *ngIf="surpriseMe">
           <ion-label>How many days are you free for?</ion-label>
@@ -68,25 +69,24 @@
           <ion-label>Start Date</ion-label>
           <ion-datetime name="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
         </ion-item>
-        <br />
 
         <ion-item *ngIf="!surpriseMe">
           <ion-label>End Date</ion-label>
           <ion-datetime name="endDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
         </ion-item>
-
-        <br /><hr /><br /><br />
+    
+        <hr />
 
         <ion-item>
-          <ion-label class="budget">Budget</ion-label>
-          <ion-range name="budget" min="500" max="10000" pin="true" color="secondary" [(ngModel)]="budget">
+          <ion-label>Budget</ion-label>
+          <ion-range name="budget" min="500" max="10000" step="500" pin="true" color="secondary" [(ngModel)]="budget">
             <ion-label range-left class="budget">500</ion-label>
             <ion-label range-right class="budget">10000</ion-label>
           </ion-range>
           <!--add p for value-->
         </ion-item>
 
-        <br /><hr /><br />
+        <hr />
 
         <button name="submit" ion-button color="secondary" type="submit" class="addMargin">Submit</button>
       </form>

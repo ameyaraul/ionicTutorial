@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+﻿import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
 
@@ -19,7 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage: any = ProfilePage;
+  rootPage: any = ResultsPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -32,8 +32,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Let\'s PlanIt!', component: HelloIonicPage },
-      { title: 'Profile', component: ProfilePage }
+      { title: 'PlanIt', component: HelloIonicPage },
+      { title: 'Settings', component: ProfilePage }
     ];
   }
 

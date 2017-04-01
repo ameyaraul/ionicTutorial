@@ -1,5 +1,4 @@
-// http://ionicframework.com/docs/v2/theming/
-
+﻿// http://ionicframework.com/docs/v2/theming/
 
 // App Global Sass
 // --------------------------------------------------
@@ -42,5 +41,20 @@ ion-thumbnail img {
 }
 
 button ion-icon {
+  color: #FFF;
+}
+
+.menu {
+  background-color: #30968C;
+}
+
+.menuList {
+  margin-top: 12px;
+  margin-left: 8px;
+}
+
+.menuButton {
+  background-color: #30968C;
+  font-size: 1.25em;
   color: #FFF;
 }

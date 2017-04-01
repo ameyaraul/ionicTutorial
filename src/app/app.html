@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+﻿<ion-menu [content]="content">
 
   <ion-header>
     <ion-toolbar>
@@ -6,9 +6,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+  <ion-content class="menu">
+    <ion-list no-lines class="menuList">
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="menuButton">
+        <ion-icon *ngIf="p.title == 'PlanIt'" name="map" style="margin-right: 0px;" item-left></ion-icon>
+        <ion-icon *ngIf ="p.title == 'Settings'" name="settings" style="margin-right: 0px;"  item-left></ion-icon>
+        
         {{p.title}}
       </button>
     </ion-list>
