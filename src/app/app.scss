@@ -14,3 +14,33 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.toolbar {
+  height: 5em;
+  box-shadow: none;
+}
+
+.toolbar-title {
+  color: #FFF;
+}
+
+.toolbar-background {
+  background: url('../assets/img/Landing_Background.jpg') center;
+  background-size: 45em;
+}
+
+ion-thumbnail img {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 75%;
+}
+
+button ion-icon {
+  color: #FFF;
+}

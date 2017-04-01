@@ -1,70 +1,75 @@
-<ion-header>
+﻿<ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-thumbnail>
-      <img width=200px src="assets/img/Logo2.png">
+      <img src="assets/img/Logo2.png">
     </ion-thumbnail>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
- <div *ngIf="showLoading" class="loader"></div>
- <form (ngSubmit)="submit()">
-  <h3>Discover the best vacation for your needs and desires!</h3>
+  <div *ngIf="showLoading" class="loader"></div>
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="submit()">
 
-  <p>
-    <ion-list>
-      <ion-item>
-        <ion-label>Select your city of departure</ion-label>
-        <ion-select  name ="departure" [(ngModel)]="departure">
-        <ion-option  *ngFor="let dest of destinations">
-          {{dest.place}}
-        </ion-option>
-        </ion-select>
-      </ion-item>  
-    </ion-list>
-  </p>
-  <p>
-    <ion-list>
-      <ion-item>
-        <ion-label>Select the places you want to visit</ion-label>
-        <ion-select [(ngModel)]="destination" name ="destination" multiple="true" cancelText="Nah" okText="Okay!" >
-        <ion-option  *ngFor="let dest of destinations">
-          {{dest.place}}
-        </ion-option>
-        </ion-select>
-      </ion-item>  
-    </ion-list>
-  </p>
-  <p>
-    <ion-item>
-        <ion-label>Start Date</ion-label>
-        <ion-datetime name ="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
-    </ion-item>
-  </p>
-  <p>
-    <ion-item>
-        <ion-label>End Date</ion-label>
-        <ion-datetime name ="endDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
-    </ion-item>
-  </p>
-  <p>
-  <ion-list>
-    <ion-list-header>
-      Budget      
-    </ion-list-header>
-    <ion-item>
-      <ion-range name ="budget" min="100" max="10000" pin="true"[(ngModel)]="budget">
-         <ion-label range-left>100</ion-label>
-        <ion-label range-right>10000</ion-label> 
-      </ion-range>
-    </ion-item>
-  </ion-list>
-  </p>
-  <p> <button name ="submit" ion-button color="secondary" type="submit" >Submit</button></p>
-   </form>
+        <div class="header">
+          <ion-card-title><b>Discover the best vacation for your needs and desires!</b></ion-card-title>
+        </div>
+
+        <br /><hr /><br />
+
+        <ion-item>
+          <ion-label>Select your city of departure</ion-label>
+          <ion-select name="departure" [(ngModel)]="departure">
+            <ion-option *ngFor="let dest of destinations">
+              {{dest.place}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <br /><hr /><br />
+
+        <ion-item>
+          <ion-label>Select the places you want to visit</ion-label>
+          <ion-select [(ngModel)]="destination" name="destination" multiple="true" cancelText="Nah" okText="Okay!">
+            <ion-option *ngFor="let dest of destinations">
+              {{dest.place}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+        <br /><hr /><br />
+
+        <ion-item>
+          <ion-label>Start Date</ion-label>
+          <ion-datetime name="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
+        </ion-item>
+        <br />
+
+        <ion-item>
+          <ion-label>End Date</ion-label>
+          <ion-datetime name="endDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
+        </ion-item>
+
+        <br /><hr /><br /><br />
+
+        <ion-item>
+          <ion-label class="budget">Budget</ion-label>
+          <ion-range name="budget" min="500" max="10000" pin="true" color="secondary" [(ngModel)]="budget">
+            <ion-label range-left class="budget">500</ion-label>
+            <ion-label range-right class="budget">10000</ion-label>
+          </ion-range>
+          <!--add p for value-->
+        </ion-item>
+
+        <br /><hr /><br />
+
+        <button name="submit" ion-button color="secondary" type="submit" class="addMargin">Submit</button>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

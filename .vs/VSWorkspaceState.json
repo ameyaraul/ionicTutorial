@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\resources\\android",
+    "\\resources\\android\\splash",
+    "\\src",
+    "\\src\\app",
+    "\\src\\pages",
+    "\\src\\pages\\hello-ionic",
+    "\\src\\pages\\item-details",
+    "\\src\\pages\\list",
+    "\\src\\pages\\profile",
+    "\\src\\pages\\results",
+    "\\src\\pages\\welcome"
+  ],
+  "SelectedNode": "\\src\\theme\\variables.scss",
+  "PreviewInSolutionExplorer": false
+}

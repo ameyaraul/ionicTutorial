@@ -1,33 +1,26 @@
-item-details {
-	.segment-md .segment-button{
-		width:130px;
-	}
-	$segment-button-ios-background-color:"red";
-	.image {
-    	display: inline-block;
-  		width: 50px;
-  		height: 50px;
-  		border-radius: 50%;
-  		background-repeat: no-repeat;
-  		background-position: center center;
-  		background-size: cover;
-  		}
-  	.item.wrap, .item-content.wrap  .wrap{
-		white-space: normal;
-	}	
-	.small {
-		font-size:10px;
-		position: relative;
-		top: 10px;
-		
-	}
-	.depflight {
-			position: relative;
-			font-size:10px;
-			top: 20px;
-			left:-20px;	
-	}
-	.medium {
-		font-size:15px;
-	}
+﻿item-details {
+
+  .list-md {
+    margin: 16px 0 16px 0;
+  }
+
+  .item > ion-icon:first-child, .item-inner > ion-icon:first-child .segment-md .segment-button {
+    min-width: 40px;
+  }
+
+  .item > ion-icon:first-child, .item-inner > ion-icon:first-child {
+    margin: 8px 16px 8px 0;
+  }
+
+  .item-md ion-icon[item-left] + .item-inner, .item-md ion-icon[item-left] + .item-input {
+    margin-left: 0;
+  }
+
+  .paddingLeft {
+    padding-left: 16px;
+  }
+
+  .oneLineParagraph p {
+    display: inline;
+  }
 }

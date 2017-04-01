@@ -1,16 +1,16 @@
-<ion-header>
+﻿<ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-thumbnail>
-      <img width=200px src="assets/img/Logo2.png">
+      <img src="assets/img/Logo2.png">
     </ion-thumbnail>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <!--<ion-card>
     <ion-item>
       <ion-avatar item-left>
         <img src="assets/img/profile.png">
@@ -23,90 +23,105 @@
        <ion-card-title>Traveller Soul: Peace Lover \\m/! </ion-card-title>
       <p>You prefer a calm and relaxed vacation far away from the bounds of civilization. Enjoy the solitude!!</p>
     </ion-card-content>
-  </ion-card>
+  </ion-card>-->
   <ion-card>
-    <ion-card-header>
-      Wanna tinker with your vacation? 
-    </ion-card-header>
     <ion-card-content>
-      <p>Adjust the knobs below and see the magic happen</p>
+
+      <div class="header">
+        <ion-card-title><b>Wanna tinker with your vacation?</b></ion-card-title>
+        <p>Adjust the knobs below and see the magic happen</p>
+      </div>
+
       <ion-list>
-        <ion-item>
-          <h2 color="mustsee">Must See</h2>
-          <ion-item>
-            <ion-range name ="Must See" min="1" max="5" snaps="true" [(ngModel)]="mustSee" color="mustsee">
-            </ion-range>
-          </ion-item>
-          <p *ngIf="mustSee == 1" color="mustsee">I'm a trailblazer</p>
-          <p *ngIf="mustSee == 2" color="mustsee">Only the best</p>
-          <p *ngIf="mustSee == 3" color="mustsee">Must see some</p>
-          <p *ngIf="mustSee == 4" color="mustsee">Must see most</p>
-          <p *ngIf="mustSee == 5" color="mustsee">See them all</p>
-        </ion-item>
+        <br />
+        <hr />
 
         <ion-item>
-          <h2 color="art">Art</h2>
+          <h2>Must See</h2>
           <ion-item>
-            <ion-range name ="Art" min="1" max="5" snaps="true" [(ngModel)]="art" color="art">
+            <ion-range name ="Must See" min="1" max="5" snaps="true" [(ngModel)]="mustSee" color="secondary">
             </ion-range>
           </ion-item>
-          <p *ngIf="art == 1" color="art">I don't understand why people like this!</p>
-          <p *ngIf="art == 2" color="art">Limited Interest</p>
-          <p *ngIf="art == 3" color="art">It's pretty cool!</p>
-          <p *ngIf="art == 4" color="art">My precious!</p>
-          <p *ngIf="art == 5" color="art">Art Lover</p>
+          <p *ngIf="mustSee == 1">I'm a trailblazer</p>
+          <p *ngIf="mustSee == 2">Only the best</p>
+          <p *ngIf="mustSee == 3">Let's see a few</p>
+          <p *ngIf="mustSee == 4">Must see most</p>
+          <p *ngIf="mustSee == 5">See them all</p>
         </ion-item>
 
-        <ion-item>
-          <h2 color="history">History</h2>
-          <ion-item>
-            <ion-range name ="History" min="1" max="5" snaps="true" [(ngModel)]="history" color="history">
-            </ion-range>
-          </ion-item>
-          <p *ngIf="history == 1" color="history">I don't care what happened in the past</p>
-          <p *ngIf="history == 2" color="history">Limited Interest</p>
-          <p *ngIf="history == 3" color="history">It's pretty cool!</p>
-          <p *ngIf="history == 4" color="history">Important to me</p>
-          <p *ngIf="history == 5" color="history">I'm practically a Historian</p>
-        </ion-item>
+        <hr />
 
         <ion-item>
-          <h2 color="museums">Museums</h2>
+          <h2>Art</h2>
           <ion-item>
-            <ion-range name ="Museums" min="1" max="5" snaps="true" [(ngModel)]="museums" color="museums">
+            <ion-range name ="Art" min="1" max="5" snaps="true" [(ngModel)]="art" color="secondary">
             </ion-range>
           </ion-item>
-          <p *ngIf="museums == 1" color="museums">Boooooring!</p>
-          <p *ngIf="museums == 2" color="museums">Maybe if I have absolutely nothing to do!</p>
-          <p *ngIf="museums == 3" color="museums">It's fun</p>
-          <p *ngIf="museums == 4" color="museums">Important to me</p>
-          <p *ngIf="museums == 5" color="museums">See them all</p>
+          <p *ngIf="art == 1">I don't understand why people like this!</p>
+          <p *ngIf="art == 2">Limited interest</p>
+          <p *ngIf="art == 3">It's pretty cool</p>
+          <p *ngIf="art == 4">My precious!</p>
+          <p *ngIf="art == 5">Art lover</p>
         </ion-item>
 
-        <ion-item>
-          <h2 color="nature">Nature</h2>
-          <ion-item>
-            <ion-range name ="Nature" min="1" max="5" snaps="true" [(ngModel)]="nature" color="nature">
-            </ion-range>
-          </ion-item>
-          <p *ngIf="nature == 1" color="nature">Boooooring!</p>
-          <p *ngIf="nature == 2" color="nature">Maybe if I have absolutely nothing to do!</p>
-          <p *ngIf="nature == 3" color="nature">I like the outdoors</p>
-          <p *ngIf="nature == 4" color="nature">Need fresh air</p>
-          <p *ngIf="nature == 5" color="nature">Into the wild</p>
-        </ion-item>
+        <hr />
 
         <ion-item>
-          <h2 color="entertainment">Entertainment</h2>
+          <h2>History</h2>
           <ion-item>
-            <ion-range name ="Entertainment" min="1" max="5" snaps="true" [(ngModel)]="entertainment" color="entertainment">
+            <ion-range name ="History" min="1" max="5" snaps="true" [(ngModel)]="history" color="secondary">
             </ion-range>
           </ion-item>
-          <p *ngIf="entertainment == 1" color="entertainment">Kiddie Pool Fun</p>
-          <p *ngIf="entertainment == 2" color="entertainment">Only the best</p>
-          <p *ngIf="entertainment == 3" color="entertainment">Just a little typsy</p>
-          <p *ngIf="entertainment == 4" color="entertainment">Lets have some fun</p>
-          <p *ngIf="entertainment == 5" color="entertainment">I was born to party</p>
+          <p *ngIf="history == 1">I don't care what happened in the past</p>
+          <p *ngIf="history == 2">Meh</p>
+          <p *ngIf="history == 3">It's pretty cool!</p>
+          <p *ngIf="history == 4">Important to me</p>
+          <p *ngIf="history == 5">I'm practically a historian</p>
+        </ion-item>
+
+        <hr />
+
+        <ion-item>
+          <h2>Museums</h2>
+          <ion-item>
+            <ion-range name ="Museums" min="1" max="5" snaps="true" [(ngModel)]="museums" color="secondary">
+            </ion-range>
+          </ion-item>
+          <p *ngIf="museums == 1">Boooooring!</p>
+          <p *ngIf="museums == 2">Maybe if I have absolutely nothing to do!</p>
+          <p *ngIf="museums == 3">It's ok...</p>
+          <p *ngIf="museums == 4">Important to me</p>
+          <p *ngIf="museums == 5">Essential</p>
+        </ion-item>
+
+        <hr />
+
+        <ion-item>
+          <h2>Nature</h2>
+          <ion-item>
+            <ion-range name ="Nature" min="1" max="5" snaps="true" [(ngModel)]="nature" color="secondary">
+            </ion-range>
+          </ion-item>
+          <p *ngIf="nature == 1">I hate nature</p>
+          <p *ngIf="nature == 2">Maybe if I have absolutely nothing to do?</p>
+          <p *ngIf="nature == 3">I like the outdoors</p>
+          <p *ngIf="nature == 4">Fresh air is a necessity</p>
+          <p *ngIf="nature == 5">Into the wild</p>
+        </ion-item>
+
+        <hr />
+
+        <ion-item>
+          <h2>Entertainment</h2>
+          <ion-item>
+            <ion-range name ="Entertainment" min="1" max="5" snaps="true" [(ngModel)]="entertainment" color="secondary">
+            </ion-range>
+          </ion-item>
+          <p *ngIf="entertainment == 1">Kiddie Pool Fun</p>
+          <p *ngIf="entertainment == 2">Only the best</p>
+          <p *ngIf="entertainment == 3">Just a little tipsy</p>
+          <p *ngIf="entertainment == 4">Lets have some fun</p>
+          <p *ngIf="entertainment == 5">I was born to party</p>
         </ion-item>
 
       </ion-list>
