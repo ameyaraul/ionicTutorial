@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, trigger, state, style, animate, transition} from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Injectable }     from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -23,16 +23,19 @@ export class HelloIonicPage {
 	public destination: any;
 	public budget: any;
 	public departure : any;
+    public daysFree: any;
     
     public startDate: Date;
 	public endDate: Date;
     public showLoading: boolean; 
+    public surpriseMe: boolean;
   constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {  
         this.showLoading = false;
   		this.http.get('http://localhost:8000/tourdetails/destinations').map(res => res.json()).subscribe(data => {
         this.destinations = data;
         console.log(this.destinations);
     	});
+        this.surpriseMe = true;
 
   }
   submit() {

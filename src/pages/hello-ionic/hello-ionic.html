@@ -24,8 +24,8 @@
         <br /><hr /><br />
 
         <ion-item>
-          <ion-label>Select your city of departure</ion-label>
-          <ion-select name="departure" [(ngModel)]="departure">
+          <ion-label>Where are you from?</ion-label>
+          <ion-select name="departure" [(ngModel)]="departure" cancelText="I dunno">
             <ion-option *ngFor="let dest of destinations">
               {{dest.place}}
             </ion-option>
@@ -35,8 +35,13 @@
         <br /><hr /><br />
 
         <ion-item>
-          <ion-label>Select the places you want to visit</ion-label>
-          <ion-select [(ngModel)]="destination" name="destination" multiple="true" cancelText="Nah" okText="Okay!">
+          <ion-label>Surprise Me!</ion-label>
+          <ion-toggle name="surpriseMe" [(ngModel)]="surpriseMe" color="secondary"></ion-toggle>
+        </ion-item>
+
+        <ion-item *ngIf="!surpriseMe">
+          <ion-label>What do you have in mind?</ion-label>
+          <ion-select [(ngModel)]="destination" name="destination" multiple="true" cancelText="Naaah" okText="Okay!">
             <ion-option *ngFor="let dest of destinations">
               {{dest.place}}
             </ion-option>
@@ -44,13 +49,28 @@
         </ion-item>
         <br /><hr /><br />
 
-        <ion-item>
+        <ion-item *ngIf="surpriseMe">
+          <ion-label>How many days are you free for?</ion-label>
+          <ion-select [(ngModel)]="daysFree" name="daysFree" cancelText="I'm not free" okText="Okay!">
+            <ion-option>
+              5
+            </ion-option>
+            <ion-option>
+              10
+            </ion-option>
+            <ion-option>
+              15
+            </ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="!surpriseMe">
           <ion-label>Start Date</ion-label>
           <ion-datetime name="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
         </ion-item>
         <br />
 
-        <ion-item>
+        <ion-item *ngIf="!surpriseMe">
           <ion-label>End Date</ion-label>
           <ion-datetime name="endDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
         </ion-item>
