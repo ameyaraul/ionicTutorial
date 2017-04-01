@@ -20,6 +20,7 @@ import 'rxjs/add/operator/catch';
 export class HelloIonicPage {
 	
     private getTripURL = "http://localhost:8000/tourdetails/gettripjson"; 
+    private getBestTripURL = "http://localhost:8000/tourdetails/getbesttripjson"; 
 	data={};
 	destinations ='';
 	public destination: any;
@@ -42,13 +43,24 @@ export class HelloIonicPage {
   }
   submit() {
         this.showLoading = true;
+        var url = "";
+        var destinations = [];
+        if(this.surpriseMe){
+            url = this.getBestTripURL;
+            destinations = [this.departure];
+        }
+        else{
+            url = this.getTripURL;
+            destinations = this.destination;
+        }
+
   		var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         this.http.post(
-            this.getTripURL, 
+            url, 
             JSON.stringify({
                     origin:this.departure,
-                    destinations:this.destination,
+                    destinations:destinations,
                     from_date:this.startDate, 
                     to_date:this.endDate,
                     budget:this.budget,
@@ -70,6 +82,7 @@ export class HelloIonicPage {
             },
             (x) => {
                 /* this function is executed when there's an ERROR */
+                this.showLoading = false;
                 console.log("ERROR: "+x);
             },
             () => {
