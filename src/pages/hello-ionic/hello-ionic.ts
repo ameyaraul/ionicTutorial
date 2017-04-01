@@ -1,9 +1,11 @@
-import { Component, trigger, state, style, animate, transition} from '@angular/core';
+import { Component} from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { Injectable }     from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ProfilePage } from '../../pages/profile/profile';
 import { ResultsPage } from '../../pages/results/results';
+import { ProfileService } from '../../services/ProfileService';
 
 // Import RxJs required methods
 import 'rxjs/add/operator/map';
@@ -29,7 +31,7 @@ export class HelloIonicPage {
 	public endDate: Date;
     public showLoading: boolean; 
     public surpriseMe: boolean;
-  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams) {  
+  constructor(public http: Http, public navCtrl: NavController, public navParams: NavParams, public profileService:ProfileService) {  
         this.showLoading = false;
   		this.http.get('http://localhost:8000/tourdetails/destinations').map(res => res.json()).subscribe(data => {
         this.destinations = data;
@@ -49,7 +51,8 @@ export class HelloIonicPage {
                     destinations:this.destination,
                     from_date:this.startDate, 
                     to_date:this.endDate,
-                    budget:this.budget                    
+                    budget:this.budget,
+                    profile:this.profileService.getProfile()                   
                 }),
             {headers:headers}
         ).map(

@@ -7,6 +7,7 @@ import { ResultsPage } from '../pages/results/results';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ProfilePage } from '../pages/profile/profile';
 import { ListPage } from '../pages/list/list';
+import { ProfileService } from '../services/ProfileService';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    ProfileService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
