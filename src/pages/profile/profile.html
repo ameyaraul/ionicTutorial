@@ -39,7 +39,7 @@
         <ion-item>
           <h2>Must See</h2>
           <ion-item>
-            <ion-range name ="Must See" min="1" max="5" snaps="true" [(ngModel)]="mustSee" color="secondary">
+            <ion-range name ="Must See" min="1" max="5" snaps="true" [(ngModel)]="mustSee" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="mustSee == 1">I'm a trailblazer</p>
@@ -54,7 +54,7 @@
         <ion-item>
           <h2>Art</h2>
           <ion-item>
-            <ion-range name ="Art" min="1" max="5" snaps="true" [(ngModel)]="art" color="secondary">
+            <ion-range name ="Art" min="1" max="5" snaps="true" [(ngModel)]="art" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="art == 1">I don't understand why people like this!</p>
@@ -69,7 +69,7 @@
         <ion-item>
           <h2>History</h2>
           <ion-item>
-            <ion-range name ="History" min="1" max="5" snaps="true" [(ngModel)]="history" color="secondary">
+            <ion-range name ="History" min="1" max="5" snaps="true" [(ngModel)]="history" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="history == 1">I don't care what happened in the past</p>
@@ -84,7 +84,7 @@
         <ion-item>
           <h2>Museums</h2>
           <ion-item>
-            <ion-range name ="Museums" min="1" max="5" snaps="true" [(ngModel)]="museums" color="secondary">
+            <ion-range name ="Museums" min="1" max="5" snaps="true" [(ngModel)]="museums" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="museums == 1">Boooooring!</p>
@@ -99,7 +99,7 @@
         <ion-item>
           <h2>Nature</h2>
           <ion-item>
-            <ion-range name ="Nature" min="1" max="5" snaps="true" [(ngModel)]="nature" color="secondary">
+            <ion-range name ="Nature" min="1" max="5" snaps="true" [(ngModel)]="nature" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="nature == 1">I hate nature</p>
@@ -114,7 +114,7 @@
         <ion-item>
           <h2>Entertainment</h2>
           <ion-item>
-            <ion-range name ="Entertainment" min="1" max="5" snaps="true" [(ngModel)]="entertainment" color="secondary">
+            <ion-range name ="Entertainment" min="1" max="5" snaps="true" [(ngModel)]="entertainment" color="secondary" (click)="updateProfile()">
             </ion-range>
           </ion-item>
           <p *ngIf="entertainment == 1">Kiddie Pool Fun</p>

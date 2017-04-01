@@ -17,13 +17,17 @@ export class ProfilePage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private profileService:ProfileService) {
-    this.mustSee = 2;
-    this.art = 3;
-    this.history = 2;
-    this.museums = 1;
-    this.nature = 3;
-    this.entertainment = 4;
-    var profile = {
+    var oldProfile = profileService.getProfile();
+    this.mustSee = oldProfile.mustSee;
+    this.art = oldProfile.art;
+    this.history = oldProfile.history;
+    this.museums = oldProfile.museums;
+    this.nature = oldProfile.nature;
+    this.entertainment = oldProfile.entertainment;
+  }
+
+  updateProfile() {
+    var newProfile = {
       mustSee:this.mustSee,
       art:this.art,
       history:this.history,
@@ -31,6 +35,6 @@ export class ProfilePage {
       nature:this.nature,
       entertainment:this.entertainment
     }
-    this.profileService.setProfile(profile);
+    this.profileService.setProfile(newProfile);
   }
 }
