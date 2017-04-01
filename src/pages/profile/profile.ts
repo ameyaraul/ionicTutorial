@@ -21,7 +21,7 @@ export class ProfilePage {
     this.mustSee = oldProfile.MustSee;
     this.art = oldProfile.Art;
     this.history = oldProfile.History;
-    this.museums = oldProfile.Museums;
+    this.museums = oldProfile.Museum;
     this.nature = oldProfile.Nature;
     this.entertainment = oldProfile.Entertainment;
   }
@@ -31,7 +31,7 @@ export class ProfilePage {
       MustSee:this.mustSee,
       Art:this.art,
       History:this.history,
-      Museums:this.museums,
+      Museum:this.museums,
       Nature:this.nature,
       Entertainment:this.entertainment
     }

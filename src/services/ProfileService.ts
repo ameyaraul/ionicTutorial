@@ -8,7 +8,7 @@ export class ProfileService {
   		MustSee:2,
 		Art:3,
 		History:2,
-		Museums:1,
+		Museum:1,
 		Nature:3,
 		Entertainment:4
   	}
