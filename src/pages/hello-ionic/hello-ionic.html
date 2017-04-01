@@ -39,6 +39,8 @@
           <ion-toggle name="surpriseMe" [(ngModel)]="surpriseMe" color="secondary"></ion-toggle>
         </ion-item>
 
+        <hr *ngIf="!surpriseMe"/>
+
         <ion-item *ngIf="!surpriseMe">
           <ion-label>What do you have in mind?</ion-label>
           <ion-select [(ngModel)]="destination" name="destination" multiple="true" cancelText="Naaah" okText="Okay!">
@@ -51,19 +53,22 @@
         <hr />
 
         <ion-item *ngIf="surpriseMe">
-          <ion-label>How many days are you free for?</ion-label>
-          <ion-select [(ngModel)]="daysFree" name="daysFree" cancelText="I'm not free" okText="Okay!">
-            <ion-option>
-              5
-            </ion-option>
-            <ion-option>
-              10
-            </ion-option>
-            <ion-option>
-              15
-            </ion-option>
-          </ion-select>
+          <ion-label>Trip Duration (days)</ion-label>
+          <ion-input type="number" value="" min="1" max="5" [(ngModel)]="daysFree" name="daysFree"></ion-input>
         </ion-item>
+
+        <!--TODO validate-->
+        <!--TODO names for ngModel-->
+        <ion-item *ngIf="surpriseMe">
+          <ion-label class="indent">between</ion-label>
+          <ion-datetime name="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="startDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item *ngIf="surpriseMe">
+          <ion-label class="indent">and</ion-label>
+          <ion-datetime name="startDate" displayFormat="MM/DD/YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="endDate"></ion-datetime>
+        </ion-item>
+        <!--end TODO-->
 
         <ion-item *ngIf="!surpriseMe">
           <ion-label>Start Date</ion-label>

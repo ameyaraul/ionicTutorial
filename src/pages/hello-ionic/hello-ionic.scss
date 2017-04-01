@@ -17,4 +17,13 @@
   .datetime-md {
     color: #30968C;
   }
+
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: #30968C;
+    box-shadow: inset 0 -1px 0 0 #30968C;
+  }
+
+  .indent {
+    margin-left: 16px;
+  }
 }
