@@ -18,12 +18,12 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private profileService:ProfileService) {
     var oldProfile = profileService.getProfile();
-    this.mustSee = oldProfile.mustSee;
-    this.art = oldProfile.art;
-    this.history = oldProfile.history;
-    this.museums = oldProfile.museums;
-    this.nature = oldProfile.nature;
-    this.entertainment = oldProfile.entertainment;
+    this.mustSee = oldProfile.MustSee;
+    this.art = oldProfile.Art;
+    this.history = oldProfile.History;
+    this.museums = oldProfile.Museums;
+    this.nature = oldProfile.Nature;
+    this.entertainment = oldProfile.Entertainment;
   }
 
   updateProfile() {
