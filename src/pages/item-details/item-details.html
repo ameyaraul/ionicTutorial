@@ -8,9 +8,9 @@
 
   
     <ion-segment [(ngModel)]="day" color="secondary">
-      <div *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
+      <ng-container *ngFor="let city of itinerary.city_itinerary|slice:1; let i = index">
         <ion-segment-button *ngIf="city.name == selectedCity.name" value={{city.day}}>{{city.s_month|number:'1.0-0'}}/{{city.s_day|number:'1.0-0'}}</ion-segment-button>
-      </div>
+      </ng-container>
     </ion-segment>
     
   
@@ -32,20 +32,15 @@
                 <p *ngIf="city.s_minute">{{city.s_hour|number:'2.0-0'}}:{{city.s_minute|number:'2.0-0'}}</p>
                 <p> &nbsp; | &nbsp; Flight {{inFlights[selectedCityName]}}</p>
               </div>
+
             </ion-item>
-          </ion-list>
-
-          <hr *ngIf="city.arrived == 'yes'" />
-
-          <ion-list>
+            <span *ngIf="city.arrived == 'yes'" >
             <ion-item>
               <ion-icon name="home" item-left></ion-icon>
               Lodging at {{itinerary.hotels[selectedCityName]}}
             </ion-item>
+          </span>
           </ion-list>
-          
-          <hr />
-
           <h3 *ngIf="itinerary.attraction_itinerary[i].attractions.length > 0" class="paddingLeft">Itinerary</h3>
 
           <ion-list>
@@ -70,7 +65,7 @@
           </div>
           </ion-list>
 
-         <hr *ngIf="city.departed == 'yes'" />
+         <ng-container *ngIf="city.departed == 'yes'" >
 
           <ion-list *ngIf="city.departed == 'yes'">
             <ion-item>
@@ -83,7 +78,7 @@
               </div>
             </ion-item>
           </ion-list>
-
+          </ng-container >
         </ion-list>
       </div>
     </div>
