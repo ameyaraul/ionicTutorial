@@ -53,8 +53,8 @@
         <hr />
 
         <ion-item *ngIf="surpriseMe">
-          <ion-label>Trip Duration (days)</ion-label>
-          <ion-input type="number" value="" min="1" max="5" [(ngModel)]="daysFree" name="daysFree"></ion-input>
+          <ion-label>How many days?</ion-label>
+          <ion-input type="number" value="" min="1" max="5" placeholder="e.g. 5, 10, 100" [(ngModel)]="daysFree" name="daysFree">days</ion-input>
         </ion-item>
 
         <!--TODO validate-->

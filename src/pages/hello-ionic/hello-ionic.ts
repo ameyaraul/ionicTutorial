@@ -78,7 +78,7 @@ export class HelloIonicPage {
                     itinerary: res
                 });
                 this.showLoading = false;
-                console.log("VALUE RECEIVED: ",res);
+                //console.log("VALUE RECEIVED: ",res);
             },
             (x) => {
                 /* this function is executed when there's an ERROR */
