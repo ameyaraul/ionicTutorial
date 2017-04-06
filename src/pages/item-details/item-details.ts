@@ -29,6 +29,13 @@ export class ItemDetailsPage {
     this.outFlights = this.itinerary.out_flights;
     this.myIndex = navParams.get('index');
 
-    this.day = "1";
+    var i = 0;
+    for ( i = 0; i < this.itinerary.city_itinerary.length; i++) {
+      if (this.selectedCityName == this.itinerary.city_itinerary[i].name){
+        this.day = this.itinerary.city_itinerary[i].day;
+        break;
+      }
+    }
+    //this.day = "1";
   }
 }
