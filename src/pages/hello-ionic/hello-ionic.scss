@@ -9,6 +9,15 @@
     background: url('../assets/img/Loading.gif') 50% 50% no-repeat rgb(255,255,255);
     background-size: 85%;
   }
+  ion-label {
+    font-size: 12px;
+  }
+  ion-select {
+    font-size: 12px;
+  }
+  ion-datetime {
+    font-size: 12px;
+  }
 
   .header {
     text-align: center;
