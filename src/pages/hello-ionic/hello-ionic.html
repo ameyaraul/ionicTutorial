@@ -54,7 +54,16 @@
 
         <ion-item *ngIf="surpriseMe">
           <ion-label>How many days?</ion-label>
+          <!--
           <ion-input type="number" value="" min="1" max="5" placeholder="e.g. 5, 10, 100" [(ngModel)]="daysFree" name="daysFree">days</ion-input>
+          !-->
+          <ion-select [(ngModel)]="daysFree" name="daysFree">
+            <ion-option>1</ion-option>
+            <ion-option>2</ion-option>
+            <ion-option>3</ion-option>
+            <ion-option>4</ion-option>
+            <ion-option>5</ion-option>
+          </ion-select>
         </ion-item>
 
         <!--TODO validate-->
